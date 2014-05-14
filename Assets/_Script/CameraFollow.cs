@@ -45,7 +45,15 @@ public class CameraFollow : MonoBehaviour {
 	
 	void TrackPlayer ()
 	{
-		player = GameObject.Find("hero_spiderman(Clone)").transform;
+		//获取第一名的玩家
+		string firstPlayerName="";
+		for(int i=0;i<StartScript.players.Length;i++){
+			//print("CameraFollow"+StartScript.players[i].getRank());
+			if(StartScript.players[i].getRank()==1)
+				firstPlayerName=StartScript.players[i].getPlayername();
+		}
+		print("CameraFollow"+firstPlayerName);
+		player = GameObject.Find(firstPlayerName+"(Clone)").transform;
 		// By default the target x and y coordinates of the camera are it's current x and y coordinates.
 		float targetX = transform.position.x;
 		float targetY = transform.position.y;

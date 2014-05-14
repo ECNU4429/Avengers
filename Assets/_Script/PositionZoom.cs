@@ -18,8 +18,8 @@ public class PositionZoom{
 		this.direct=direct;
 	}
 
-	public bool ifInTheZoom(float x,float y){
-		if(x>minX&&x<=maxX&&y>minY&&y<minY)
+	public bool ifInTheZoom(Vector2 position){
+		if(position.x>minX&&position.x<=maxX&&position.y>minY&&position.y<=maxY)
 			return true;
 		else
 			return false;

@@ -14,7 +14,7 @@ public class StartScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		players = new Player[4];
+		players = new Player[2];
 		
 	}
 	
@@ -24,10 +24,10 @@ public class StartScript : MonoBehaviour {
 		print(myTime);
 		if(myTime>timeLength){
 			print("success");
-			keyControl=new KeyControl(KeyCode.UpArrow,"Horizontal");
+			keyControl=new KeyControl(KeyCode.UpArrow,KeyCode.DownArrow,"Horizontal");
 			players[0]=new Player("hero_spiderman",1,new Vector2(0,0),keyControl);
-			keyControl2=new KeyControl(KeyCode.W,"Horizontal2");
-			players[1]=new Player("hero_batman",2,new Vector2(0,0),keyControl2);
+			keyControl2=new KeyControl(KeyCode.W,KeyCode.S,"Horizontal2");
+			players[1]=new Player("hero_batman",2,new Vector2(0,0.01f),keyControl2);
 			
 			Application.LoadLevel(nextLevel);
 		}
